@@ -19,7 +19,6 @@ function M.config()
       "pyproject.toml",
       "package.json",
       "pom.xml",
-      "Cargo.toml",
     },
     ignore_lsp = {},
     exclude_dirs = {},

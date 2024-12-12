@@ -18,15 +18,6 @@ M.on_attach = function(client, bufnr)
     vim.lsp.inlay_hint.enable(true, { bufnr })
   end
 
-  require("lspconfig").ruff.setup {
-    on_attach = function(client, bufnr)
-      if client.name == "ruff" then
-        -- Disable hover in favor of pyright
-        client.server_capabilities.hoverProvider = false
-      end
-    end,
-  }
-
   require("lspconfig").pyright.setup {
     settings = {
       pyright = {
@@ -60,7 +51,6 @@ function M.config()
   wk.add {
     { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" },
     { "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>" },
-    { "gd", "<cmd>lua vim.lsp.buf.definition()<CR>" },
     { "K", "<cmd>lua vim.lsp.buf.hover()<CR>" },
     { "gI", "<cmd>lua vim.lsp.buf.implementation()<CR>" },
     { "gr", "<cmd>lua vim.lsp.buf.references()<CR>" },
@@ -98,7 +88,6 @@ function M.config()
     "bashls",
     "jsonls",
     "yamlls",
-    "ruff",
   }
 
   local default_diagnostic_config = {

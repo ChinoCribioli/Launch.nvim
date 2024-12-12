@@ -69,3 +69,4 @@ vim.g.netrw_mouse = 2
 -- end
 
 vim.g.python3_host_prog = "$HOME/.virtualenvs/neovim313/bin/python"
+vim.opt.so = 50
