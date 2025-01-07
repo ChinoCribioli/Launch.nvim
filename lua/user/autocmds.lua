@@ -74,3 +74,10 @@ vim.api.nvim_create_autocmd({ "CursorHold" }, {
     end
   end,
 })
+
+vim.api.nvim_create_autocmd( {"BufRead", "BufNewFile"} , {
+  pattern = "*.sage",
+  callback = function()
+    vim.bo.filetype = "python"
+  end,
+})
